@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>炫酷按钮动画网页</title>
+    <!-- 所有样式都内嵌在HTML的style标签中 -->
+    <style>
+        /* 页面基础样式 */
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* 标题动画 */
+        .page-title {
+            color: #ffffff;
+            font-size: 2.5rem;
+            margin: 0;
+            animation: float 3s ease-in-out infinite;
+            text-shadow: 0 0 15px rgba(0, 212, 255, 0.7);
+        }
+
+        /* 按钮容器 */
+        .btn-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* 基础按钮样式 */
+        .cool-btn {
+            padding: 15px 35px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 按钮1：悬停缩放+渐变变色 */
+        .btn-1 {
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            color: white;
+        }
+        .btn-1:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.5);
+        }
+        .btn-1:active {
+            transform: scale(0.95);
+        }
+
+        /* 按钮2：点击按压+边框发光 */
+        .btn-2 {
+            background: #00d2d3;
+            color: white;
+            border: 2px solid transparent;
+        }
+        .btn-2:hover {
+            border-color: #00ffff;
+            box-shadow: 0 0 20px rgba(0, 210, 211, 0.6);
+        }
+        .btn-2:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 10px rgba(0, 210, 211, 0.4);
+        }
+
+        /* 按钮3：旋转动画+脉冲效果 */
+        .btn-3 {
+            background: #74b9ff;
+            color: white;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        .btn-3:hover {
+            animation: rotate 0.5s ease-in-out;
+            background: #0984e3;
+        }
+
+        /* 按钮4：渐变背景流动 */
+        .btn-4 {
+            color: white;
+            background: linear-gradient(90deg, #a29bfe, #fd79a8, #a29bfe);
+            background-size: 200% 100%;
+            animation: gradientFlow 3s ease infinite;
+        }
+        .btn-4:hover {
+            transform: skew(-5deg);
+            box-shadow: 0 0 25px rgba(162, 155, 254, 0.7);
+        }
+
+        /* 按钮5：文字发光+背景镂空 */
+        .btn-5 {
+            background: transparent;
+            color: #ffffff;
+            border: 2px solid #00ff9d;
+            text-shadow: 0 0 10px #00ff9d;
+        }
+        .btn-5:hover {
+            background: rgba(0, 255, 157, 0.2);
+            box-shadow: 0 0 30px rgba(0, 255, 157, 0.5);
+        }
+
+        /* 动画关键帧定义 */
+        /* 漂浮动画 */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* 脉冲动画 */
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* 旋转动画 */
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* 渐变流动动画 */
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="page-title">炫酷动画按钮演示</h1>
+    
+    <div class="btn-container">
+        <button class="cool-btn btn-1">缩放渐变按钮</button>
+        <button class="cool-btn btn-2">按压发光按钮</button>
+        <button class="cool-btn btn-3">旋转脉冲按钮</button>
+        <button class="cool-btn btn-4">渐变流动按钮</button>
+        <button class="cool-btn btn-5">镂空发光按钮</button>
+    </div>
+</body>
+</html>
